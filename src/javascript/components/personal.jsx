@@ -20,15 +20,15 @@ var Personal = React.createClass({
         <ul className="form-fields">
           <li>
             <label>Name</label>
-            <input name="name" ref="name" defaultValue={this.props.fieldValues.name} />
+            <input type="text" ref="name" defaultValue={this.props.fieldValues.name} />
           </li>
           <li>
             <label>Password</label>
-            <input name="password" ref="password" defaultValue={this.props.fieldValues.password} />
+            <input type="password" ref="password" defaultValue={this.props.fieldValues.password} />
           </li>
           <li>
             <label>Email</label>
-            <input name="email" ref="email" defaultValue={this.props.fieldValues.email} />
+            <input type="email" ref="email" defaultValue={this.props.fieldValues.email} />
           </li>
           <li className="form-footer">
             <button className="btn -primary pull-right" onClick={this.nextStep}>Next Step</button>
