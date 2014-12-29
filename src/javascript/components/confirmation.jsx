@@ -11,8 +11,7 @@ var Confirmation = React.createClass({
         name   : null,
         email  : null,
         age    : null,
-        gender : null,
-        colors : null
+        colors : []
       }
     }
   },
@@ -25,7 +24,6 @@ var Confirmation = React.createClass({
           <li><b>Name:</b> {this.props.fieldValues.name}</li>
           <li><b>Email:</b> {this.props.fieldValues.email}</li>
           <li><b>Age:</b> {this.props.fieldValues.age}</li>
-          <li><b>Gender:</b> {this.props.fieldValues.gender}</li>
           <li><b>Colors:</b> {this.props.fieldValues.colors.join(', ')}</li>
         </ul>
         <ul className="form-fields">
