@@ -28,12 +28,9 @@ var Survey = React.createClass({
   renderOptions: function(type, name, value, index) {
     var fieldValues = this.props.fieldValues
     var isChecked   = function() {
-      if (type == 'radio') {
-        return value == fieldValues[name]
-      }
-      if (type == 'checkbox') {
-        return fieldValues[name].indexOf(value) >= 0
-      }
+      if (type == 'radio') return value == fieldValues[name]
+
+      if (type == 'checkbox') return fieldValues[name].indexOf(value) >= 0
 
       return false
     }
