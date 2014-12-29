@@ -14,8 +14,7 @@ var data = window.data = {
   email    : null,
   password : null,
   age      : null,
-  gender   : null,
-  bio      : null
+  colors   : []
 }
 
 var Registration = React.createClass({

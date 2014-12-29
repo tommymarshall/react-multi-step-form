@@ -7,8 +7,7 @@ var Survey = React.createClass({
 
   getDefaultProps: function() {
     return {
-      age    : null,
-      colors : [],
+      fieldValues : {}
     };
   },
 
@@ -26,10 +25,22 @@ var Survey = React.createClass({
     return values
   },
 
-  renderOptions: function(type, name, value) {
+  renderOptions: function(type, name, value, index) {
+    var fieldValues = this.props.fieldValues
+    var isChecked   = function() {
+      if (type == 'radio') {
+        return value == fieldValues[name]
+      }
+      if (type == 'checkbox') {
+        return fieldValues[name].indexOf(value) >= 0
+      }
+
+      return false
+    }
+
     return (
-      <label>
-        <input type={type} name={name} value={value} /> {value}
+      <label key={index}>
+        <input type={type} name={name} value={value} defaultChecked={isChecked()} /> {value}
       </label>
     )
   },
