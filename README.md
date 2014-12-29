@@ -1,8 +1,6 @@
 # React Multi-Step Form
-============
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/871454/5573712/c49e0148-8f7e-11e4-9d3c-132a120aa5bf.png)
-
 
 If you are new to Gulp, Browserify, or build tools in general be sure to check out the [blog post](http://viget.com/extend/gulp-browserify-starter-faq) for more context and the [Wiki](https://github.com/greypants/gulp-starter/wiki) for some additional background knowledge.
 
