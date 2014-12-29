@@ -41,10 +41,11 @@ var Personal = React.createClass({
   nextStep: function(e) {
     e.preventDefault()
 
-    var data = {}
-
-    for (var prop in this.refs) {
-      data[prop] = this.refs[prop].getDOMNode().value
+    // Get values via this.refs
+    var data = {
+      name     : this.refs.name.getDOMNode().value,
+      password : this.refs.password.getDOMNode().value,
+      email    : this.refs.email.getDOMNode().value,
     }
 
     this.props.saveData(data).nextStep()

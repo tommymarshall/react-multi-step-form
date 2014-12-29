@@ -59,6 +59,7 @@ var Survey = React.createClass({
   nextStep: function(e) {
     e.preventDefault()
 
+    // Get values via querySelector
     var age    = document.querySelector('input[name="age"]:checked')
     var colors = document.querySelectorAll('input[name="colors"]')
 
@@ -66,8 +67,6 @@ var Survey = React.createClass({
       age    : this.getValue(age),
       colors : this.getValue(colors)
     }
-
-    console.log('data', data)
 
     this.props.saveData(data).nextStep()
   }
