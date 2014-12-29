@@ -80,8 +80,8 @@ body {
 // Progress
 .progress-bar {
   background: #fff;
-  border: 1px solid #e8e8e8;
   border-radius: 5px;
+  border: 1px solid #e8e8e8;
   height: 8px;
   margin-bottom: 20px;
   position: relative;
@@ -124,9 +124,9 @@ body {
 // Forms
 
 .form-fields {
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 
   > li {
     margin-bottom: 20px;
@@ -161,8 +161,8 @@ label {
     position: relative;
 
     input {
-      position: absolute;
       left: 0;
+      position: absolute;
       top: 0;
     }
   }
