@@ -1,0 +1,180 @@
+// Colors
+$green  : #3aad91;
+$blue   : #2989c6;
+$grey   : #414141;
+$orange : #fb6733;
+$red    : #d33847;
+$grey   : #4c5e65;
+
+// Helpers
+@mixin clear-fix {
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  .lte7 & {
+    zoom: 1;
+  }
+}
+
+// Base Layout Styles
+
+html, body {
+  font-family: "Open Sans", Helvetica, arial;
+  font-size: 16px;
+  line-height: 1.36;
+  max-width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.container {
+  margin: 20px auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+// Buttons
+
+.btn {
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px 12px;
+  text-align: center;
+
+  &.-default {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    color: $grey;
+
+    &:hover {
+      background-color: #eee;
+    }
+  }
+
+  &.-primary {
+    background-color: $blue;
+    border: 1px solid $blue;
+
+    &:hover {
+      background-color: darken($blue, 5%);
+    }
+  }
+}
+
+// Progress
+.progress {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 5px;
+  height: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+}
+
+.progress-bar {
+  background: $blue;
+  border-radius: 5px;
+  height: 6px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.progress-step {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  position: relative;
+  margin-bottom: 18px;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+// Alignments
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+// Forms
+
+.form-fields {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 20px;
+  }
+}
+
+.form-footer {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+
+  .checkbox &,
+  .radio & {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: normal;
+    padding: 1px 12px 1px 30px;
+    position: relative;
+
+    input {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}
+
+input {
+  font-size: 16px;
+  padding: 8px;
+  width: 100%;
+}
+
+select {
+  font-size: 16px;
+  padding: 8px;
+}
