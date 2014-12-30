@@ -3,16 +3,7 @@
  */
 var React = require('react')
 
-var Personal = React.createClass({
-
-  getDefaultProps: function() {
-    return {
-      name     : '',
-      password : '',
-      email    : ''
-    };
-  },
-
+var AccountFields = React.createClass({
   render: function() {
     return (
       <div>
@@ -50,7 +41,6 @@ var Personal = React.createClass({
 
     this.props.saveData(data).nextStep()
   }
-
 })
 
-module.exports = Personal
+module.exports = AccountFields

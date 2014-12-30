@@ -3,14 +3,7 @@
  */
 var React = require('react')
 
-var Survey = React.createClass({
-
-  getDefaultProps: function() {
-    return {
-      fieldValues : {}
-    };
-  },
-
+var SurveyFields = React.createClass({
   getValue: function(el) {
     var values = []
 
@@ -64,9 +57,7 @@ var Survey = React.createClass({
     )
   },
 
-  nextStep: function(e) {
-    e.preventDefault()
-
+  nextStep: function() {
     // Get values via querySelector
     var age    = document.querySelector('input[name="age"]:checked')
     var colors = document.querySelectorAll('input[name="colors"]')
@@ -78,7 +69,6 @@ var Survey = React.createClass({
 
     this.props.saveData(data).nextStep()
   }
-
 })
 
-module.exports = Survey
+module.exports = SurveyFields

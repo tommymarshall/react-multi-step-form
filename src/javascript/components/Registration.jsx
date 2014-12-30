@@ -1,11 +1,11 @@
 /**
  * @jsx React.DOM
  */
-var React        = require('react')
-var Personal     = require('./personal')
-var Confirmation = require('./confirmation')
-var Survey       = require('./survey')
-var assign       = require('object-assign')
+var React         = require('react')
+var AccountFields = require('./AccountFields')
+var Confirmation  = require('./Confirmation')
+var SurveyFields  = require('./SurveyFields')
+var assign        = require('object-assign')
 
 // Idealy, these form values would be saved in another
 // sort of persistence, like a Store via Flux pattern
@@ -18,7 +18,6 @@ var data = window.data = {
 }
 
 var Registration = React.createClass({
-
   getInitialState: function() {
     return {
       step : 1
@@ -67,19 +66,21 @@ var Registration = React.createClass({
         <span className="progress-step">Step {this.state.step}</span>
         <progress className="progress" style={style}></progress>
         {this.state.step === 1 &&
-          <Personal saveData={this.saveData}
-                    previousStep={this.previousStep}
-                    fieldValues={data} />
+          <AccountFields fieldValues={data}
+                         nextStep={this.nextStep}
+                         previousStep={this.previousStep}
+                         saveData={this.saveData} />
         }
         {this.state.step === 2 &&
-          <Survey saveData={this.saveData}
-                  previousStep={this.previousStep}
-                  fieldValues={data} />
+          <SurveyFields fieldValues={data}
+                        nextStep={this.nextStep}
+                        previousStep={this.previousStep}
+                        saveData={this.saveData} />
         }
         {this.state.step === 3 &&
-          <Confirmation submitRegistration={this.submitRegistration}
+          <Confirmation fieldValues={data}
                         previousStep={this.previousStep}
-                        fieldValues={data} />
+                        submitRegistration={this.submitRegistration} />
         }
         {this.state.step === 4 &&
           <div>
@@ -90,7 +91,6 @@ var Registration = React.createClass({
       </main>
     )
   }
-
 })
 
 module.exports = Registration

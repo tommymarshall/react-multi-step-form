@@ -4,18 +4,6 @@
 var React = require('react')
 
 var Confirmation = React.createClass({
-
-  getDefaultProps: function() {
-    return {
-      fieldValues : {
-        name   : null,
-        email  : null,
-        age    : null,
-        colors : []
-      }
-    }
-  },
-
   render: function() {
     return (
       <div>
