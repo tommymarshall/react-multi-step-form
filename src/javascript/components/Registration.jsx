@@ -66,19 +66,19 @@ var Registration = React.createClass({
         <span className="progress-step">Step {this.state.step}</span>
         <progress className="progress" style={style}></progress>
         {this.state.step === 1 &&
-          <AccountFields fieldValues={data}
+          <AccountFields fieldData={data}
                          nextStep={this.nextStep}
                          previousStep={this.previousStep}
                          saveData={this.saveData} />
         }
         {this.state.step === 2 &&
-          <SurveyFields fieldValues={data}
+          <SurveyFields fieldData={data}
                         nextStep={this.nextStep}
                         previousStep={this.previousStep}
                         saveData={this.saveData} />
         }
         {this.state.step === 3 &&
-          <Confirmation fieldValues={data}
+          <Confirmation fieldData={data}
                         previousStep={this.previousStep}
                         submitRegistration={this.submitRegistration} />
         }

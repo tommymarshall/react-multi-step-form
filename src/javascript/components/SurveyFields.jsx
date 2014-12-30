@@ -19,14 +19,13 @@ var SurveyFields = React.createClass({
   },
 
   renderOptions: function(type, name, value, index) {
-    var fieldValues = this.props.fieldValues
-    var isChecked   = function() {
-      if (type == 'radio') return value == fieldValues[name]
+    var isChecked = function() {
+      if (type == 'radio') return value == this.props.fieldData[name]
 
-      if (type == 'checkbox') return fieldValues[name].indexOf(value) >= 0
+      if (type == 'checkbox') return this.props.fieldData[name].indexOf(value) >= 0
 
       return false
-    }
+    }.bind(this)
 
     return (
       <label key={index}>
