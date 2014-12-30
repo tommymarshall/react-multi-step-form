@@ -65,9 +65,7 @@ var Registration = React.createClass({
     return (
       <main>
         <span className="progress-step">Step {this.state.step}</span>
-        <div className="progress-bar">
-          <div className="progress-fuel" style={style}></div>
-        </div>
+        <progress className="progress" style={style}></progress>
         {this.state.step === 1 &&
           <Personal saveData={this.saveData}
                     previousStep={this.previousStep}

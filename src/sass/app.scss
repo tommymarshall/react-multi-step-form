@@ -78,34 +78,17 @@ body {
 }
 
 // Progress
-.progress-bar {
-  background: #fff;
-  border-radius: 5px;
-  border: 1px solid #e8e8e8;
-  height: 8px;
+.progress {
   margin-bottom: 20px;
-  position: relative;
-  width: 100%;
-}
-
-.progress-fuel {
-  background: $blue;
-  border-radius: 5px;
-  height: 6px;
-  margin-bottom: 20px;
-  position: absolute;
-  top: 0;
   transition: all 0.2s ease;
-  width: 100%;
 }
 
 .progress-step {
   display: block;
   font-size: 12px;
   font-weight: bold;
-  position: relative;
   margin-bottom: 18px;
-  right: 0;
+  position: relative;
   text-align: center;
   text-transform: uppercase;
   width: 100%;
