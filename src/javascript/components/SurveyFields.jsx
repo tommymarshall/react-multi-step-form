@@ -36,8 +36,8 @@ var SurveyFields = React.createClass({
             {['Blue', 'Red', 'Orange', 'Green'].map(this.renderOptions.bind(this, 'checkbox', 'colors'))}
           </li>
           <li className="form-footer">
-            <button className="btn -default pull-left" onClick={this.props.previousStep}>Previous Step</button>
-            <button className="btn -primary pull-right" onClick={this.nextStep}>Next Step</button>
+            <button className="btn -default pull-left" onClick={this.props.previousStep}>Back</button>
+            <button className="btn -primary pull-right" onClick={this.nextStep}>Save &amp; Continue</button>
           </li>
         </ul>
       </div>

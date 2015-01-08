@@ -22,7 +22,7 @@ var AccountFields = React.createClass({
             <input type="email" ref="email" defaultValue={this.props.fieldValues.email} />
           </li>
           <li className="form-footer">
-            <button className="btn -primary pull-right" onClick={this.nextStep}>Next Step</button>
+            <button className="btn -primary pull-right" onClick={this.nextStep}>Save &amp; Continue</button>
           </li>
         </ul>
       </div>
