@@ -1,28 +1,16 @@
 /**
  * @jsx React.DOM
  */
-var React = require('react')
+var React                   = require('react')
+var getRadioOrCheckboxValue = require('../lib/radiobox-value')
 
 var SurveyFields = React.createClass({
-  getValue: function(el) {
-    var values = []
-
-    if (!el) return null
-
-    if (typeof el.length == 'undefined') return el.checked ? el.value : null
-
-    for (var i = 0; i < el.length; i++) {
-      el[i].checked && values.push(el[i].value)
-    }
-
-    return values
-  },
 
   renderOptions: function(type, name, value, index) {
     var isChecked = function() {
-      if (type == 'radio') return value == this.props.fieldData[name]
+      if (type == 'radio') return value == this.props.fieldValues[name]
 
-      if (type == 'checkbox') return this.props.fieldData[name].indexOf(value) >= 0
+      if (type == 'checkbox') return this.props.fieldValues[name].indexOf(value) >= 0
 
       return false
     }.bind(this)
@@ -62,11 +50,12 @@ var SurveyFields = React.createClass({
     var colors = document.querySelectorAll('input[name="colors"]')
 
     var data = {
-      age    : this.getValue(age),
-      colors : this.getValue(colors)
+      age    : getRadioOrCheckboxValue(age),
+      colors : getRadioOrCheckboxValue(colors)
     }
 
-    this.props.saveData(data).nextStep()
+    this.props.saveValues(data)
+    this.props.nextStep()
   }
 })
 

@@ -9,7 +9,7 @@ var assign        = require('object-assign')
 
 // Idealy, these form values would be saved in another
 // sort of persistence, like a Store via Flux pattern
-var data = window.data = {
+var fieldValues  = {
   name     : null,
   email    : null,
   password : null,
@@ -24,11 +24,9 @@ var Registration = React.createClass({
     }
   },
 
-  saveData: function(field_data) {
+  saveValues: function(field_value) {
     return function() {
-      data = assign({}, data, field_data)
-
-      return this
+      fieldValues = assign({}, fieldValues, field_value)
     }.bind(this)()
   },
 
@@ -36,16 +34,12 @@ var Registration = React.createClass({
     this.setState({
       step : this.state.step + 1
     })
-
-    return this
   },
 
   previousStep: function() {
     this.setState({
       step : this.state.step - 1
     })
-
-    return this
   },
 
   submitRegistration: function() {
@@ -66,19 +60,19 @@ var Registration = React.createClass({
         <span className="progress-step">Step {this.state.step}</span>
         <progress className="progress" style={style}></progress>
         {this.state.step === 1 &&
-          <AccountFields fieldData={data}
+          <AccountFields fieldValues={fieldValues}
                          nextStep={this.nextStep}
                          previousStep={this.previousStep}
-                         saveData={this.saveData} />
+                         saveValues={this.saveValues} />
         }
         {this.state.step === 2 &&
-          <SurveyFields fieldData={data}
+          <SurveyFields fieldValues={fieldValues}
                         nextStep={this.nextStep}
                         previousStep={this.previousStep}
-                        saveData={this.saveData} />
+                        saveValues={this.saveValues} />
         }
         {this.state.step === 3 &&
-          <Confirmation fieldData={data}
+          <Confirmation fieldValues={fieldValues}
                         previousStep={this.previousStep}
                         submitRegistration={this.submitRegistration} />
         }

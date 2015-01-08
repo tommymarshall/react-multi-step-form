@@ -11,15 +11,15 @@ var AccountFields = React.createClass({
         <ul className="form-fields">
           <li>
             <label>Name</label>
-            <input type="text" ref="name" defaultValue={this.props.fieldData.name} />
+            <input type="text" ref="name" defaultValue={this.props.fieldValues.name} />
           </li>
           <li>
             <label>Password</label>
-            <input type="password" ref="password" defaultValue={this.props.fieldData.password} />
+            <input type="password" ref="password" defaultValue={this.props.fieldValues.password} />
           </li>
           <li>
             <label>Email</label>
-            <input type="email" ref="email" defaultValue={this.props.fieldData.email} />
+            <input type="email" ref="email" defaultValue={this.props.fieldValues.email} />
           </li>
           <li className="form-footer">
             <button className="btn -primary pull-right" onClick={this.nextStep}>Next Step</button>
@@ -39,7 +39,8 @@ var AccountFields = React.createClass({
       email    : this.refs.email.getDOMNode().value,
     }
 
-    this.props.saveData(data).nextStep()
+    this.props.saveValues(data)
+    this.props.nextStep()
   }
 })
 

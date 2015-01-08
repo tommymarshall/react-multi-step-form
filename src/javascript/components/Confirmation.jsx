@@ -9,10 +9,10 @@ var Confirmation = React.createClass({
       <div>
         <h2>Confirm Registration</h2>
         <ul>
-          <li><b>Name:</b> {this.props.fieldData.name}</li>
-          <li><b>Email:</b> {this.props.fieldData.email}</li>
-          <li><b>Age:</b> {this.props.fieldData.age}</li>
-          <li><b>Colors:</b> {this.props.fieldData.colors.join(', ')}</li>
+          <li><b>Name:</b> {this.props.fieldValues.name}</li>
+          <li><b>Email:</b> {this.props.fieldValues.email}</li>
+          <li><b>Age:</b> {this.props.fieldValues.age}</li>
+          <li><b>Colors:</b> {this.props.fieldValues.colors.join(', ')}</li>
         </ul>
         <ul className="form-fields">
           <li className="form-footer">
