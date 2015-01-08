@@ -9,7 +9,7 @@ var assign        = require('object-assign')
 
 // Idealy, these form values would be saved in another
 // sort of persistence, like a Store via Flux pattern
-var fieldValues  = {
+var fieldValues = {
   name     : null,
   email    : null,
   password : null,
