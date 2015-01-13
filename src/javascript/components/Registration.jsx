@@ -43,11 +43,11 @@ var Registration = React.createClass({
   },
 
   submitRegistration: function() {
-    alert('Ajax submit registration would happen here')
+    // Handle via ajax submitting the user data, upon
+    // success return this.nextStop(). If it fails,
+    // show the user the error but don't advance
 
-    this.setState({
-      step : this.state.step + 1
-    })
+    this.nextStep()
   },
 
   render: function() {
