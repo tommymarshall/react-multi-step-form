@@ -79,7 +79,7 @@ var Registration = React.createClass({
         {this.state.step === 4 &&
           <div>
             <h2>Successfully Registered!</h2>
-            <p>Please check your email <b>{data.email}</b> for a confirmation link to activate your account.</p>
+            <p>Please check your email <b>{fieldValues.email}</b> for a confirmation link to activate your account.</p>
           </div>
         }
       </main>
