@@ -4,6 +4,7 @@
 var React         = require('react')
 var AccountFields = require('./AccountFields')
 var Confirmation  = require('./Confirmation')
+var Success       = require('./Success')
 var SurveyFields  = require('./SurveyFields')
 var assign        = require('object-assign')
 
@@ -50,6 +51,27 @@ var Registration = React.createClass({
     this.nextStep()
   },
 
+  showStep: function() {
+    switch (this.state.step) {
+      case 1:
+        return <AccountFields fieldValues={fieldValues}
+                              nextStep={this.nextStep}
+                              previousStep={this.previousStep}
+                              saveValues={this.saveValues} />
+      case 2:
+        return <SurveyFields fieldValues={fieldValues}
+                             nextStep={this.nextStep}
+                             previousStep={this.previousStep}
+                             saveValues={this.saveValues} />
+      case 3:
+        return <Confirmation fieldValues={fieldValues}
+                             previousStep={this.previousStep}
+                             submitRegistration={this.submitRegistration} />
+      case 4:
+        return <Success fieldValues={fieldValues} />
+    }
+  },
+
   render: function() {
     var style = {
       width : (this.state.step / 4 * 100) + '%'
@@ -59,29 +81,7 @@ var Registration = React.createClass({
       <main>
         <span className="progress-step">Step {this.state.step}</span>
         <progress className="progress" style={style}></progress>
-        {this.state.step === 1 &&
-          <AccountFields fieldValues={fieldValues}
-                         nextStep={this.nextStep}
-                         previousStep={this.previousStep}
-                         saveValues={this.saveValues} />
-        }
-        {this.state.step === 2 &&
-          <SurveyFields fieldValues={fieldValues}
-                        nextStep={this.nextStep}
-                        previousStep={this.previousStep}
-                        saveValues={this.saveValues} />
-        }
-        {this.state.step === 3 &&
-          <Confirmation fieldValues={fieldValues}
-                        previousStep={this.previousStep}
-                        submitRegistration={this.submitRegistration} />
-        }
-        {this.state.step === 4 &&
-          <div>
-            <h2>Successfully Registered!</h2>
-            <p>Please check your email <b>{fieldValues.email}</b> for a confirmation link to activate your account.</p>
-          </div>
-        }
+        {this.showStep()}
       </main>
     )
   }
