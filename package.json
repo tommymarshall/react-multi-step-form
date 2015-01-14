@@ -8,7 +8,12 @@
   },
   "browserify": {
     "transform": [
-      ["reactify", {"es6": true}]
+      [
+        "reactify",
+        {
+          "es6": true
+        }
+      ]
     ]
   },
   "browserify-shim": {
@@ -21,10 +26,13 @@
     "gulp": "^3.8.10",
     "gulp-autoprefixer": "^2.0.0",
     "gulp-changed": "^1.1.0",
+    "gulp-filesize": "0.0.6",
     "gulp-imagemin": "^2.0.0",
+    "gulp-minify-css": "^0.3.12",
     "gulp-notify": "^2.1.0",
     "gulp-sass": "^1.2.4",
     "gulp-swig": "^0.7.4",
+    "gulp-uglify": "^1.0.2",
     "gulp-util": "^3.0.1",
     "pretty-hrtime": "^0.2.2",
     "require-dir": "^0.1.0",

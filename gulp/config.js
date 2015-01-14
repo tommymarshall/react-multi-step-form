@@ -13,7 +13,12 @@ module.exports = {
   },
   sass: {
     src: src + '/sass/**/*.scss',
-    dest: dest + '/assets/css/'
+    dest: dest
+  },
+  production: {
+    cssSrc: dest + '/*.css',
+    jsSrc: dest + '/*.js',
+    dest: dest
   },
   markup: {
     src: src + '/htdocs/*.html',
@@ -31,7 +36,7 @@ module.exports = {
     extensions: ['.jsx'],
     bundleConfigs: [{
       entries: src + '/javascript/app.jsx',
-      dest: dest + '/assets/js/',
+      dest: dest + '/',
       outputName: 'app.js'
     }]
   }
