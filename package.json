@@ -1,10 +1,10 @@
 {
-  "name": "react-template-starter",
+  "name": "reactreact-multi-step-form",
   "version": "1.0.0",
   "description": "A base for building a react app.",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tommymarshall/starter-template.git"
+    "url": "git://github.com/tommymarshall/reactreact-multi-step-form.git"
   },
   "browserify": {
     "transform": [
