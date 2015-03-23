@@ -1,4 +1,4 @@
-# React Multi-Step Form
+# React Multi-Step Form (Test)
 
 ![Screenshot](https://cloud.githubusercontent.com/assets/871454/5573712/c49e0148-8f7e-11e4-9d3c-132a120aa5bf.png)
 
