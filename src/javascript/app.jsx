@@ -2,11 +2,10 @@
  * @jsx React.DOM
  */
 var React        = require('react')
+var ReactDOM     = require('react-dom')
 var Registration = require('./components/Registration')
 
-window.onload = function() {
-  React.render(
+  ReactDOM.render(
     <Registration />,
     document.getElementById('registration-form')
   )
-}

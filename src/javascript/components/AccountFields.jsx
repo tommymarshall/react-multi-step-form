@@ -34,9 +34,9 @@ var AccountFields = React.createClass({
 
     // Get values via this.refs
     var data = {
-      name     : this.refs.name.getDOMNode().value,
-      password : this.refs.password.getDOMNode().value,
-      email    : this.refs.email.getDOMNode().value,
+      name     : this.refs.name.value,
+      password : this.refs.password.value,
+      email    : this.refs.email.value,
     }
 
     this.props.saveValues(data)
